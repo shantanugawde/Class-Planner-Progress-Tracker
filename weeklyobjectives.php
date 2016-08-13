@@ -15,7 +15,6 @@
   See the License for the specific language governing permissions and
   limitations under the License
 -->
-
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -37,13 +36,9 @@
 		</head>
 
 	<body>
-	
-		
-    <header class="docs-layout-header mdl-layout__header">			
-				<?php
-					include "header.php";
-				?>
-		</header>
+		<?php
+     $header_active=1;
+     include 'header.php';?>
 		<div class ="mdl-grid">
 			<div class="mdl-cell mdl-cell--1-col " >
 			</div>
