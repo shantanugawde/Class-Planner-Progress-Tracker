@@ -52,12 +52,10 @@
      $header_active=1;
      include 'header.php';?>
 	  <dialog class="mdl-dialog" id="dialog" style="width:400px">
-    <h6 class="mdl-dialog__title" style="padding:2px,24px,0">Some date</h6>
-    <div class="mdl-dialog__content" style="height:150px">
-      <textarea id="content" style="width:300px;height:120px"></textarea>
+    <h6 class="mdl-dialog__title" style="padding:2px,24px,0" id="h6"></h6>
+    <div class="mdl-dialog__content" style="height:150px" id="content">
     </div>
-    <div class="mdl-dialog__actions">
-      <button type="button" class="mdl-button">Go</button>
+    <div class="mdl-dialog__actions" id="buttons">
       <button type="button" class="mdl-button close">Close</button>
     </div>
   </dialog>
