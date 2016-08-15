@@ -1,6 +1,6 @@
 
 
-      <div class="android-header mdl-layout__header mdl-layout__header--waterfall" style="background-color:#FF0000;">
+      <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
         <div class="mdl-layout__header-row">
           <span class="android-title mdl-layout-title">
           </span>
@@ -15,9 +15,10 @@
           <!-- Navigation -->
           <div class="android-navigation-container">
             <nav class="android-navigation mdl-navigation" id="head">
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="weeklyobjectives.php">Weekly Objectives</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="weeklyobjectives.php">Objectives</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="calendar.php">Calendar</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Log Progress</a>
+			  <a class="mdl-navigation__link mdl-typography--text-uppercase" href="lessonplanner.php">Plan Module</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="logprogress.php">Log Progress</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Class Progress</a>
             </nav>
           </div>
