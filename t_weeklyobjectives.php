@@ -1,20 +1,31 @@
-<!doctype html>
-<!--
-  Material Design Lite
-  Copyright 2015 Google Inc. All rights reserved.
+<?php
+	require('db_connect.php');
+	date_default_timezone_set('Asia/Kolkata');
+	$dates=array();
+	$days=array();
+	$i=0;
+	$today=getdate();
+	$dates[$i]=date('Y-m-d'); 
+	$temp=strtotime($dates[$i]);
+	$days[$i]=date("w",$temp);
+	for($i=1;$i<7;$i++){
+		$temp=strtotime("+1 days", strtotime($dates[$i-1]));
+		$dates[$i] = date('Y-m-d', $temp);
+		$temp=strtotime($dates[$i]);
+		$days[$i]=date("w",$temp);
+	}
+	$obj=array();
+	$k=0;
+	for($i=0;$i<7;$i++){
+		if($days[$i]!=0 || $days[$i]!=6){
+			$sql="select AD_Objective from academicday as a inner join teacher as t inner join teacherclass as tc where a.AD_Date='".$dates[$i]."' and tc.T_ID=1";
+			$result=mysqli_query($conn,$sql);
+			$row=$result->fetch_assoc();
+			$obj[$days[$i]]=$row['AD_Objective'];
+		}
+	}
+?>
 
-  Licensed under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
-
-      https://www.apache.org/licenses/LICENSE-2.0
-
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License
--->
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -25,7 +36,7 @@
 		<script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
 		<title>Android</title>
 
-    <!-- Page styles -->
+
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 		<link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.min.css">
@@ -50,22 +61,11 @@
 					<h4>
 					  Objectives
 					  <br>
-					  Point 1
+					  <?php
+						echo $obj[1];
+					  ?>
 					</h4>
 					
-				  </div>
-				  
-				</div>
-				<div class = "mdl-grid"></div>
-				<div class="demo-card-event mdl-card-subj mdl-shadow--2dp">
-				 <div class="mdl-card__title mdl-card--expand">
-					<h4>
-					  SOOAD
-					  <br>
-					  Point 1
-					  <br>
-					  Point 2
-					</h4>
 				  </div>
 				  
 				</div>
@@ -78,39 +78,11 @@
 					<h4>
 					  Objectives
 					  <br>
-					  Point 1
-					  <br>
-					  Point 2
+					   <?php
+						echo $obj[2];
+						?>
 					</h4>
 					
-				  </div>
-				  
-				</div>
-				<div class = "mdl-grid"></div>
-				<div class="demo-card-event mdl-card-subj mdl-shadow--2dp">
-				 <div class="mdl-card__title mdl-card--expand">
-					<h4>
-					  OS
-					  <br>
-					  Point 1
-					  <br>
-					  Point 2
-					  <br>
-					  Point 3
-					</h4>
-				  </div>
-				  
-				</div>
-				<div class = "mdl-grid"></div>
-				<div class="demo-card-event mdl-card-subj mdl-shadow--2dp">
-				 <div class="mdl-card__title mdl-card--expand">
-					<h4>
-					  MP
-					  <br>
-					  Point 1
-					  <br>
-					  Point 2
-					</h4>
 				  </div>
 				  
 				</div>
@@ -122,22 +94,15 @@
 				 <div class="mdl-card__title mdl-card--expand">
 					<h4>
 					  Objectives
+						<br>
+						<?php
+						echo $obj[3];
+						?>
 					</h4>
 					
 				  </div>
 				  
 				</div>
-				<div class = "mdl-grid"></div>
-				<div class="demo-card-event mdl-card-subj mdl-shadow--2dp">
-				 <div class="mdl-card__title mdl-card--expand">
-					<h4>
-					  BCE
-					  
-					</h4>
-				  </div>
-				  
-				</div>
-				
 			</div>
 			<div class="mdl-cell mdl-cell--2-col">
 				<div class="typo-styles__demo mdl-typography--display-1" >Thursday</div>
@@ -147,20 +112,11 @@
 					<h4>
 					  Objectives
 					  <br>
-					  Point 1
-					  <br>
-					  Point 2
+					  <?php
+						echo $obj[4];
+						?>
 					</h4>
 					
-				  </div>
-				  
-				</div>
-				<div class = "mdl-grid"></div>
-				<div class="demo-card-event mdl-card-subj mdl-shadow--2dp">
-				 <div class="mdl-card__title mdl-card--expand">
-					<h4>
-					  Computer Networks
-					</h4>
 				  </div>
 				  
 				</div>
@@ -172,21 +128,13 @@
 				<div class="demo-card-event mdl-card-obj mdl-shadow--2dp">
 				 <div class="mdl-card__title mdl-card--expand">
 					<h4>
-					  Objectives
-					  
-					</h4>
-					
-				  </div>
-				  
-				</div>
-				<div class = "mdl-grid"></div>
-				<div class="demo-card-event mdl-card-subj mdl-shadow--2dp">
-				 <div class="mdl-card__title mdl-card--expand">
-					<h4>
-					  SOOAD
+					  Objectives 
+						<br>
+						<?php
+						echo $obj[5];
+						?>
 					</h4>
 				  </div>
-				  
 				</div>
 			</div>
 		</div>

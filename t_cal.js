@@ -7,7 +7,7 @@ function myDateFunction(id) {
 	var dialog = document.querySelector('dialog');
 	$.ajax({
 		type:"GET",
-		url:"cal_get.php",
+		url:"t_cal_get.php",
 		dataType:"json",
 		data:{
 			date: date
