@@ -15,7 +15,13 @@
   See the License for the specific language governing permissions and
   limitations under the License
 -->
-
+<?php
+	require('db_connect.php');
+	date_default_timezone_set('Asia/Kolkata');
+	$sql="select * from subject as a inner join teacherclass as tc where tc.T_ID=1";
+	$result=mysqli_query($conn,$sql);
+	
+?>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -52,7 +58,7 @@
 		<script type="text/javascript" src="https://rawgit.com/FezVrasta/bootstrap-material-design/master/dist/js/material.min.js"></script>
 		<script type="text/javascript" src="http://momentjs.com/downloads/moment-with-locales.min.js"></script>
 		<script type="text/javascript" src="./dpicker/js/bootstrap-material-datetimepicker.js"></script>
-		
+		<script src="t_lp.js"></script>
 		<style>
 			::-webkit-input-placeholder { /* WebKit, Blink, Edge */
 				color:    #909;
@@ -69,6 +75,7 @@
 		   color:    #909;
 		}
 		</style>
+		
 	</head>
 
 	<body>
@@ -81,29 +88,25 @@
 		</header>
 			<div class="mdl-grid">
 				<div class="mdl-cell mdl-cell--5-col mdl-cell--4-offset">
-					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select">
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select" id="classselect">
 						<input class="mdl-textfield__input" type="text" id="cclass" value="Class" readonly tabIndex="-1">
 						
 						<label for="cclass" class="mdl-textfield__label">Class</label>
-						<ul for="cclass" class="mdl-menu mdl-menu--bottom-left mdl-js-menu" style="text-align:center;border:none">
-							<li class="mdl-menu__item">SE Comps</li>
-							<li class="mdl-menu__item">TE Comps</li>
-							<li class="mdl-menu__item">BE Comps</li>
+						<ul id="classlist" for="cclass" class="mdl-menu mdl-menu--bottom-left mdl-js-menu" style="text-align:center;border:none">
+							
 						</ul>
 					</div>
+					
 				</div>
 			</div>
-			
+		
 			<div class="mdl-grid">
 				<div class="mdl-cell mdl-cell--5-col mdl-cell--4-offset">
-					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select">
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select" id="subselect">
 						<input class="mdl-textfield__input" type="text" id="subject" value="Subject" readonly tabIndex="-1">
 						
 						<label for="subject" class="mdl-textfield__label">Subject</label>
-						<ul for="subject" class="mdl-menu mdl-menu--bottom-left mdl-js-menu" style="text-align:center;border:none">
-							<li class="mdl-menu__item">Subject 1</li>
-							<li class="mdl-menu__item">Subject 2</li>
-							<li class="mdl-menu__item">Subject 3</li>
+						<ul for="subject" class="mdl-menu mdl-menu--bottom-left mdl-js-menu" style="text-align:center;border:none" id="sublist">
 						</ul>
 					</div>
 				</div>
@@ -111,14 +114,11 @@
 			
 			<div class="mdl-grid">
 				<div class="mdl-cell mdl-cell--5-col mdl-cell--4-offset">
-					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select">
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select" id="modselect">
 						<input class="mdl-textfield__input" type="text" id="module" value="Module" readonly tabIndex="-1">
 						
 						<label for="module" class="mdl-textfield__label">Module</label>
-						<ul for="module" class="mdl-menu mdl-menu--bottom-left mdl-js-menu" style="text-align:center;border:none">
-							<li class="mdl-menu__item">Module 1</li>
-							<li class="mdl-menu__item">Module 2</li>
-							<li class="mdl-menu__item">Module 3</li>
+						<ul for="module" class="mdl-menu mdl-menu--bottom-left mdl-js-menu" style="text-align:center;border:none" id="modlist">
 						</ul>
 					</div>
 				</div>
@@ -141,29 +141,9 @@
 			
 			<div class="mdl-grid">
 			  <div class="mdl-cell mdl-cell--4-col mdl-cell--5-offset">
-				<input type ="submit"class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" value="Submit">
+				<input type ="submit" id="submitMe" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" value="Submit">
 			  </div>
 			</div>
-		<script type="text/javascript">
-			$(document).ready(function()
-			{
-				$('#date-end').bootstrapMaterialDatePicker
-				({
-					time: false, weekStart: 0, format: 'DD/MM/YYYY'
-				});
-				$('#date-start').bootstrapMaterialDatePicker
-				({
-					time: false, weekStart: 0, format: 'DD/MM/YYYY', shortTime : true
-				}).on('change', function(e, date)
-				{
-					$('#date-end').bootstrapMaterialDatePicker('setMinDate', date);
-				});
-
-				$('#min-date').bootstrapMaterialDatePicker({ format : 'DD/MM/YYYY', minDate : new Date() });
-
-				$.material.init()
-			});
-		</script>
-
+		
 	</body>
 </html>

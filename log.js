@@ -14,6 +14,7 @@ $(function(){
 					$('#sub').append('<li class="mdl-menu__item" value="'+j+'">'+data[i].S_Name+'</li>');
 					j++;
 				}
+				getmdlSelect.init("#subselect");
 			}
 		});  
 	});
@@ -31,6 +32,7 @@ $(function(){
 				for(i=0;i<data.length;i++){
 					$('#mod').append('<li class="mdl-menu__item">'+data[i].M_Name+'</li>');
 				}
+				getmdlSelect.init("#modselect");
 			}
 		});  
 	});

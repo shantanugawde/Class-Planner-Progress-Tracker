@@ -15,8 +15,8 @@
           <!-- Navigation -->
           <div class="android-navigation-container">
             <nav class="android-navigation mdl-navigation" id="head">
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="weeklyobjectives.php">Objectives</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="calendar.php">Calendar</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="t_weeklyobjectives.php">Objectives</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="t_calendar.php">Calendar</a>
 			  <a class="mdl-navigation__link mdl-typography--text-uppercase" href="lessonplanner.php">Plan Module</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="logprogress.php">Log Progress</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Class Progress</a>

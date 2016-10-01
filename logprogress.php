@@ -2,13 +2,10 @@
 <!--
   Material Design Lite
   Copyright 2015 Google Inc. All rights reserved.
-
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
-
       https://www.apache.org/licenses/LICENSE-2.0
-
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -100,7 +97,7 @@
 			
 			<div class="mdl-grid">
 				<div class="mdl-cell mdl-cell--5-col mdl-cell--4-offset">
-					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select">
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select" id="subselect">
 						<input class="mdl-textfield__input" type="text" id="subject" value="Subject" readonly tabIndex="-1">
 						
 						<label for="subject" class="mdl-textfield__label">Subject</label>
@@ -112,7 +109,7 @@
 			
 			<div class="mdl-grid">
 				<div class="mdl-cell mdl-cell--5-col mdl-cell--4-offset">
-					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select">
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select" id="modselect">
 						<input class="mdl-textfield__input" type="text" id="module" value="Module" readonly tabIndex="-1">
 						
 						<label for="module" class="mdl-textfield__label">Module</label>
