@@ -5,12 +5,14 @@ function myDateFunction(id) {
 	var date = $("#" + id).data("date");
 	var hasEvent = $("#" + id).data("hasEvent");
 	var dialog = document.querySelector('dialog');
+	alert($('#cclass').val());
 	$.ajax({
 		type:"GET",
 		url:"t_cal_get.php",
 		dataType:"json",
 		data:{
-			date: date
+			date: date,
+			class1: $('#cclass').val()
 		},
 		success:function(data){
 			if(data!=null){
@@ -47,7 +49,8 @@ function editDialog(date,p){
 			dataType:"json",
 			data:{
 				date: date,
-				obj: $('#textarea').val()
+				obj: $('#textarea').val(),
+				class1: $('#cclass').val()
 			},
 			success:function(data){
 			}

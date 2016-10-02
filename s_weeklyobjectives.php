@@ -18,7 +18,7 @@
 	$k=0;
 	for($i=0;$i<7;$i++){
 		if($days[$i]!=0 || $days[$i]!=6){
-			$sql="select AD_Objective from academicday as a inner join student as s where a.AD_Date='".$dates[$i]."' and s.Student_ID=1";
+			$sql="select AD_Objective from academicday as a inner join student as s where a.AD_Date='".$dates[$i]."' and s.Student_ID=1 and s.CC_ID=a.CC_ID";
 			$result=mysqli_query($conn,$sql);
 			$row=$result->fetch_assoc();
 			$obj[$days[$i]]=$row['AD_Objective'];
@@ -45,11 +45,19 @@
 		<link rel="stylesheet" href="cards.css">
 		
 		</head>
+		
+	<style>
+		body{
+		background-image: url(/books.jpg);
+		background-position: center;
+		background-size: cover;
+		}
+	</style>
 
 	<body>
 		<?php
      $header_active=1;
-     include 'header.php';?>
+     include 'sheader.php';?>
 		<div class ="mdl-grid">
 			<div class="mdl-cell mdl-cell--1-col " >
 			</div>

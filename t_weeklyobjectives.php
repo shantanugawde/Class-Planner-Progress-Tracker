@@ -45,6 +45,13 @@
 		<link rel="stylesheet" href="cards.css">
 		
 		</head>
+		<style>
+		body{
+		background-image: url(/books.jpg);
+		background-position: center;
+		background-size: cover;
+		}
+	</style>
 
 	<body>
 		<?php

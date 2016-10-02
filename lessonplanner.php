@@ -59,6 +59,8 @@
 		<script type="text/javascript" src="http://momentjs.com/downloads/moment-with-locales.min.js"></script>
 		<script type="text/javascript" src="./dpicker/js/bootstrap-material-datetimepicker.js"></script>
 		<script src="t_lp.js"></script>
+		<link rel="stylesheet" href="styles.css">
+						<link rel="stylesheet" href="cards.css">
 		<style>
 			::-webkit-input-placeholder { /* WebKit, Blink, Edge */
 				color:    #909;
@@ -73,6 +75,12 @@
 		}
 		:-ms-input-placeholder { /* Internet Explorer 10-11 */
 		   color:    #909;
+
+		}
+				   		body{
+		background-image: url(/books.jpg);
+		background-position: center;
+		background-size: cover;
 		}
 		</style>
 		

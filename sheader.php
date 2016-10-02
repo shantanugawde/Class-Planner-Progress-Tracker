@@ -1,6 +1,6 @@
 
 
-      <div class="android-header mdl-layout__header mdl-layout__header--waterfall" src="https://code.getmdl.io/1.1.3/material.min.js">
+      <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
         <div class="mdl-layout__header-row">
           <span class="android-title mdl-layout-title">
           </span>
@@ -15,11 +15,9 @@
           <!-- Navigation -->
           <div class="android-navigation-container">
             <nav class="android-navigation mdl-navigation" id="head">
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="t_weeklyobjectives.php">Objectives</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="t_calendar.php">Calendar</a>
-			  <a class="mdl-navigation__link mdl-typography--text-uppercase" href="lessonplanner.php">Plan Module</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="logprogress.php">Log Progress</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="viewprogress.php">Class Progress</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="s_weeklyobjectives.php">Objectives</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="s_calendar.php">Calendar</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="s_viewprogress.php">Class Progress</a>
             </nav>
           </div>
           <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">

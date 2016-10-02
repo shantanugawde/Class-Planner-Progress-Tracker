@@ -38,7 +38,8 @@
 		<link rel="stylesheet" href="styles.css">
 
 		<script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
-		<title>Android</title>
+			    <script src="getmdl-select.min.js"></script>
+	    <link rel="stylesheet" href="getmdl-select.min.css">
 
 		<!-- Page styles -->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
@@ -46,12 +47,35 @@
 		<link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.min.css">
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
 		<script src="t_cal.js"></script>
+				
+				<link rel="stylesheet" href="styles.css">
+						<link rel="stylesheet" href="cards.css">
 	</head>
-
+	<style>
+		body{
+		background-image: url(/books.jpg);
+		background-position: center;
+		background-size: cover;
+		}
+	</style>
 	<body>
 		<?php
      $header_active=1;
      include 'header.php';?>
+			<div class="mdl-grid">
+				<div class="mdl-cell mdl-cell--5-col mdl-cell--4-offset">
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select">
+						<input class="mdl-textfield__input" type="text" id="cclass" name="cclass" value="Class" readonly tabIndex="-1">
+						
+						<label for="cclass" class="mdl-textfield__label">Class</label>
+						<ul for="cclass" class="mdl-menu mdl-menu--bottom-left mdl-js-menu" style="text-align:center;border:none">
+							<li class="mdl-menu__item" value="1">SE Comps</li>
+							<li class="mdl-menu__item" value="2">TE Comps</li>
+							<li class="mdl-menu__item" value="3">BE Comps</li>
+						</ul>
+					</div>
+				</div>
+			</div>
 	  <dialog class="mdl-dialog" id="dialog" style="width:400px">
     <h6 class="mdl-dialog__title" style="padding:2px,24px,0" id="h6"></h6>
     <div class="mdl-dialog__content" style="height:150px" id="content">

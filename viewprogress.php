@@ -1,18 +1,6 @@
-<!doctype html>
-<!--
-  Material Design Lite
-  Copyright 2015 Google Inc. All rights reserved.
-  Licensed under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
-      https://www.apache.org/licenses/LICENSE-2.0
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License
--->
+<?php
 
+?>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -37,15 +25,14 @@
 	    <script src="getmdl-select.min.js"></script>
 	    <link rel="stylesheet" href="getmdl-select.min.css">
 		
-		
+				<link rel="stylesheet" href="styles.css">
+						<link rel="stylesheet" href="cards.css">
 		<!--bootstrap-datetimepicker-->
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
 		<script src="log.js"></script>
-				
-				<link rel="stylesheet" href="styles.css">
-						<link rel="stylesheet" href="cards.css">
+		
 		<style>
 			::-webkit-input-placeholder { /* WebKit, Blink, Edge */
 				color:    #909;
@@ -61,21 +48,22 @@
 		:-ms-input-placeholder { /* Internet Explorer 10-11 */
 		   color:    #909;
 		}
+		
+	
 		body{
 		background-image: url(/books.jpg);
 		background-position: center;
 		background-size: cover;
 		}
 		</style>
-	</head>
-
-	<body>
-	
+		</head>
 		
+	
+	<body>
 		<header class="docs-layout-header mdl-layout__header">			
-				<?php
-					include "header.php";
-				?>
+		<?php
+			include "header.php";
+		?>
 		</header>
 			<div class="mdl-grid">
 				<div class="mdl-cell mdl-cell--3-col mdl-cell--4-offset"></div>
@@ -86,7 +74,6 @@
 			<div class="mdl-grid">
 				<div class="mdl-cell mdl-cell--3-col mdl-cell--4-offset"></div>
 			</div>
-			<form action="saveprogress.php" method="post">
 			<div class="mdl-grid">
 				<div class="mdl-cell mdl-cell--5-col mdl-cell--4-offset">
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select">
@@ -101,51 +88,28 @@
 					</div>
 				</div>
 			</div>
-			
-			<div class="mdl-grid">
-				<div class="mdl-cell mdl-cell--5-col mdl-cell--4-offset">
-					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select" id="subselect">
-						<input class="mdl-textfield__input" type="text" id="subject" name="subject" value="Subject" readonly tabIndex="-1">
-					
-						<label for="subject" class="mdl-textfield__label">Subject</label>
-						<ul for="subject" class="mdl-menu mdl-menu--bottom-left mdl-js-menu" id="sub" style="text-align:center;border:none">
-						</ul>
-					</div>
-				</div>
+			<div id="sliders">
 			</div>
-			
-			<div class="mdl-grid">
-				<div class="mdl-cell mdl-cell--5-col mdl-cell--4-offset">
-					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select" id="modselect">
-						<input class="mdl-textfield__input" type="text" id="module" name="module" value="Module" readonly tabIndex="-1">
-						
-						<label for="module" class="mdl-textfield__label">Module</label>
-						<ul for="module" class="mdl-menu mdl-menu--bottom-left mdl-js-menu" id="mod" style="text-align:center;border:none">
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="mdl-grid">
-				<div class="mdl-cell mdl-cell--5-col mdl-cell--3-offset">
-					<div class="form-control-wrapper">
-						<input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="0" step="5" placeholder="Progress" name="slider">
-					</div>
-				</div>
-			</div>
-			
-			<div class="mdl-grid">
-			  <div class="mdl-cell mdl-cell--5-col mdl-cell--5-offset">
-				<input type ="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" value="Submit" id="sub11">
-			  </div>
-			</div>
-			</form>
 	</body>
 	<script>
-	$('#sub11').click(function(){
-		console.log($('#cclass').val());
-		console.log($('#subject').val());
-		console.log($('#module').val());
-		console.log($('#slider').val());
+	$(function(){
+		$('#cclass').change(function(){
+			$('#sliders').empty();
+			$.ajax({
+				type:"GET",
+				url:"getprogress.php",
+				dataType:"json",
+				data:{
+					class1: $('#cclass').val()
+				},
+				success:function(data){
+					var i=0,j=0;
+					for(i=0;i<data.length;i++){
+						$('#sliders').append('data<div class="mdl-grid"><div class="mdl-cell mdl-cell--5-col mdl-cell--3-offset"><div class="form-control-wrapper"><input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="'+data[i].progress+'" step="5" placeholder="" name="slider"></div></div></div>')
+					}
+				}
+			});  
+		});
 	});
 	</script>
 </html>

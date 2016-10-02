@@ -46,12 +46,21 @@
 		<link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.min.css">
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
 		<script src="s_cal.js"></script>
+				
+				<link rel="stylesheet" href="styles.css">
+						<link rel="stylesheet" href="cards.css">
 	</head>
-
+	<style>
+		body{
+		background-image: url(/books.jpg);
+		background-position: center;
+		background-size: cover;
+		}
+	</style>
 	<body>
 		<?php
      $header_active=1;
-     include 'header.php';?>
+     include 'sheader.php';?>
 	  <dialog class="mdl-dialog" id="dialog" style="width:400px">
     <h6 class="mdl-dialog__title" style="padding:2px,24px,0" id="h6"></h6>
     <div class="mdl-dialog__content" style="height:150px" id="content">
