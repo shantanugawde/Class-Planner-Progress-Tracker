@@ -21,7 +21,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
 		<script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
-		<title>Module Planner</title>
+		<title>Log Progress</title>
 
 		<!-- Page styles -->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
@@ -60,11 +60,6 @@
 		}
 		:-ms-input-placeholder { /* Internet Explorer 10-11 */
 		   color:    #909;
-		}
-		body{
-		background-image: url(/books.jpg);
-		background-position: center;
-		background-size: cover;
 		}
 		</style>
 	</head>

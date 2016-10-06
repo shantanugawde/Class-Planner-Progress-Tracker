@@ -1,4 +1,6 @@
 <?php
+	session_start();
+	echo $_SESSION['class_id'];
 	require('db_connect.php');
 	date_default_timezone_set('Asia/Kolkata');
 	$dates=array();
@@ -18,7 +20,7 @@
 	$k=0;
 	for($i=0;$i<7;$i++){
 		if($days[$i]!=0 || $days[$i]!=6){
-			$sql="select AD_Objective from academicday as a inner join student as s where a.AD_Date='".$dates[$i]."' and s.Student_ID=1 and s.CC_ID=a.CC_ID";
+			$sql="select AD_Objective from academicday where AD_Date='".$dates[$i]."' and CC_ID='".$_SESSION['class_id']."'";
 			$result=mysqli_query($conn,$sql);
 			$row=$result->fetch_assoc();
 			$obj[$days[$i]]=$row['AD_Objective'];
@@ -34,7 +36,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
 		<script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
-		<title>Android</title>
 
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">

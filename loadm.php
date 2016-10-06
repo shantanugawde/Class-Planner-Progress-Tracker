@@ -1,5 +1,6 @@
 <?php
 	require('db_connect.php');
+	date_default_timezone_set('Asia/Kolkata');
 	$modules=array();
 	$today_date = date("Y-m-d");
 	$sql="select M_Name from module where M_Sub=(select S_ID from subject where S_Name='".$_GET['subj']."') and '".$today_date."'<=(SELECT End_Date from lessonplan where M_ID=LP_Module)";

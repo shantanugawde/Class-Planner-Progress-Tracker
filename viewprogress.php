@@ -9,7 +9,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
 		<script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
-		<title>Module Planner</title>
+		<title>View Progress</title>
 
 		<!-- Page styles -->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
@@ -49,12 +49,6 @@
 		   color:    #909;
 		}
 		
-	
-		body{
-		background-image: url(/books.jpg);
-		background-position: center;
-		background-size: cover;
-		}
 		</style>
 		</head>
 		
@@ -105,7 +99,8 @@
 				success:function(data){
 					var i=0,j=0;
 					for(i=0;i<data.length;i++){
-						$('#sliders').append('data<div class="mdl-grid"><div class="mdl-cell mdl-cell--5-col mdl-cell--3-offset"><div class="form-control-wrapper"><input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="'+data[i].progress+'" step="5" placeholder="" name="slider"></div></div></div>')
+						var str="Subject:"+data[i].S_Name+" Module:"+data[i].M_Name+" Progress:"+data[i].progress+"%";
+						$('#sliders').append('<div class="mdl-grid"><div class="mdl-cell mdl-cell--5-col mdl-cell--3-offset"><div class="form-control-wrapper">'+str+'<input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="'+data[i].progress+'" step="5" placeholder="" name="slider"></div></div></div>')
 					}
 				}
 			});  

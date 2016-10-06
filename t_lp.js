@@ -72,7 +72,7 @@ function populateSubjects(){
 			var json_obj = response;
 			
 			for(var i in json_obj){
-				$("#sublist").append('<li class="mdl-menu__item">'+json_obj[i].S_Name+'</li>');
+				$("#sublist").append('<li class="mdl-menu__item" value='+json_obj[i].S_ID+'>'+json_obj[i].S_Name+'</li>');
 			}
 			getmdlSelect.init("#subselect");
 			
@@ -80,7 +80,8 @@ function populateSubjects(){
 				for(var i in json_obj){
 					if($(this).val()==json_obj[i].S_Name){
 						subid=json_obj[i].S_ID;
-					}
+					
+	}
 				}
 				populateModules();
 			});

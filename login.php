@@ -1,20 +1,3 @@
-<!doctype html>
-<!--
-  Material Design Lite
-  Copyright 2015 Google Inc. All rights reserved.
-
-  Licensed under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
-
-      https://www.apache.org/licenses/LICENSE-2.0
-
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License
--->
 
 <html lang="en">
   <head>
@@ -71,11 +54,11 @@
             <div class="typo-styles__demo mdl-typography--display-1" style="text-align:center;">Class Planner and Progress Tracker</div>
           </div>
       </div>
-      <form action="#">
+      <form action="checkvalidity.php" method="POST">
         <div class ="mdl-grid">
           <div class="mdl-cell mdl-cell--4-col mdl-cell--4-offset" >
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"style="text-align:center;border:none">
-              <input class="mdl-textfield__input" type="text" id="uname">
+              <input class="mdl-textfield__input" type="text" name="uname">
               <label class="mdl-textfield__label" for="uname">Username</label>
             </div>
           </div>
@@ -83,7 +66,7 @@
         <div class="mdl-grid">
           <div class="mdl-cell mdl-cell--4-col mdl-cell--4-offset">
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-              <input class="mdl-textfield__input" type="password" id="pwd">
+              <input class="mdl-textfield__input" type="password" name="pwd">
               <label class="mdl-textfield__label" for="pwd">Password</label>
             </div>
           </div>

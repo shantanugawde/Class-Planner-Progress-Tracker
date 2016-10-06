@@ -18,10 +18,14 @@
 	$k=0;
 	for($i=0;$i<7;$i++){
 		if($days[$i]!=0 || $days[$i]!=6){
-			$sql="select AD_Objective from academicday as a inner join teacher as t inner join teacherclass as tc where a.AD_Date='".$dates[$i]."' and tc.T_ID=1";
+			$sql="select AD_Objective from academicday where AD_Date='".$dates[$i]."'";
 			$result=mysqli_query($conn,$sql);
-			$row=$result->fetch_assoc();
-			$obj[$days[$i]]=$row['AD_Objective'];
+			$str="";
+			while($row=$result->fetch_assoc()){
+				$str.=$row['AD_Objective'];
+				$str.="<br>";
+			}
+			$obj[$days[$i]]=$str;
 		}
 	}
 ?>
@@ -34,7 +38,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
 		<script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
-		<title>Android</title>
+		<title>Weekly Objectives</title>
 
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
@@ -65,13 +69,12 @@
 				<div class = "mdl-grid"></div>
 				<div class="demo-card-event mdl-card-obj mdl-shadow--2dp">
 				 <div class="mdl-card__title mdl-card--expand">
-					<h4>
-					  Objectives
+					<p>
 					  <br>
 					  <?php
 						echo $obj[1];
 					  ?>
-					</h4>
+					</p>
 					
 				  </div>
 				  
@@ -82,13 +85,12 @@
 				<div class = "mdl-grid"></div>
 				<div class="demo-card-event mdl-card-obj mdl-shadow--2dp">
 				 <div class="mdl-card__title mdl-card--expand">
-					<h4>
-					  Objectives
+					<p>
 					  <br>
 					   <?php
 						echo $obj[2];
 						?>
-					</h4>
+					</p>
 					
 				  </div>
 				  
@@ -99,13 +101,12 @@
 				<div class = "mdl-grid"></div>
 				<div class="demo-card-event mdl-card-obj mdl-shadow--2dp">
 				 <div class="mdl-card__title mdl-card--expand">
-					<h4>
-					  Objectives
+					<p>
 						<br>
 						<?php
 						echo $obj[3];
 						?>
-					</h4>
+					</p>
 					
 				  </div>
 				  
@@ -116,13 +117,12 @@
 				<div class = "mdl-grid"></div>
 				<div class="demo-card-event mdl-card-obj mdl-shadow--2dp">
 				 <div class="mdl-card__title mdl-card--expand">
-					<h4>
-					  Objectives
+					<p>
 					  <br>
 					  <?php
 						echo $obj[4];
 						?>
-					</h4>
+					</p>
 					
 				  </div>
 				  
@@ -134,13 +134,12 @@
 				<div class = "mdl-grid"></div>
 				<div class="demo-card-event mdl-card-obj mdl-shadow--2dp">
 				 <div class="mdl-card__title mdl-card--expand">
-					<h4>
-					  Objectives 
+					<p>
 						<br>
 						<?php
 						echo $obj[5];
 						?>
-					</h4>
+					</p>
 				  </div>
 				</div>
 			</div>

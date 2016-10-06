@@ -1,5 +1,7 @@
 <?php
-
+	session_start();
+	//echo $_SESSION['class_id']
+	
 ?>
 <html lang="en">
 	<head>
@@ -9,7 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
 		<script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
-		<title>Module Planner</title>
+		<title>View Progress</title>
 
 		<!-- Page styles -->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
@@ -51,13 +53,7 @@
 		}
 		</style>
 	</head>
-	<style>
-		body{
-		background-image: url(/books.jpg);
-		background-position: center;
-		background-size: cover;
-		}
-	</style>
+
 	<body>
 		<header class="docs-layout-header mdl-layout__header">			
 		<?php
@@ -73,26 +69,15 @@
 			<div class="mdl-grid">
 				<div class="mdl-cell mdl-cell--3-col mdl-cell--4-offset"></div>
 			</div>
-			<div class="mdl-grid">
-				<div class="mdl-cell mdl-cell--5-col mdl-cell--4-offset">
-					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select">
-						<input class="mdl-textfield__input" type="text" id="cclass" name="cclass" value="Class" readonly tabIndex="-1">
+
 						
-						<label for="cclass" class="mdl-textfield__label">Class</label>
-						<ul for="cclass" class="mdl-menu mdl-menu--bottom-left mdl-js-menu" style="text-align:center;border:none">
-							<li class="mdl-menu__item" value="1">SE Comps</li>
-							<li class="mdl-menu__item" value="2">TE Comps</li>
-							<li class="mdl-menu__item" value="3">BE Comps</li>
-						</ul>
-					</div>
-				</div>
-			</div>
+			<input id="cclass" value="<?php echo $_SESSION['class_id'] ?>" hidden></input>
 			<div id="sliders">
 			</div>
 	</body>
 	<script>
 	$(function(){
-		$('#cclass').change(function(){
+		//alert($('#cclass').val())
 			$('#sliders').empty();
 			$.ajax({
 				type:"GET",
@@ -102,13 +87,14 @@
 					class1: $('#cclass').val()
 				},
 				success:function(data){
+					//alert("hi");
 					var i=0,j=0;
 					for(i=0;i<data.length;i++){
-						$('#sliders').append('<div class="mdl-grid"><div class="mdl-cell mdl-cell--5-col mdl-cell--3-offset"><div class="form-control-wrapper">'+data[i].M_Name+'<input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="'+data[i].progress+'" step="5" placeholder=""></div></div></div>')
+						var str="Subject:"+data[i].S_Name+" Module:"+data[i].M_Name+" Progress:"+data[i].progress+"%";
+						$('#sliders').append('<div class="mdl-grid"><div class="mdl-cell mdl-cell--5-col mdl-cell--3-offset"><div class="form-control-wrapper">'+str+'<input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="'+data[i].progress+'" step="5" placeholder=""></div></div></div>')
 					}
 				}
 			});  
-		});
 	});
 	</script>
 </html>

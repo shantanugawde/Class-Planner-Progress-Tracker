@@ -5,7 +5,6 @@ function myDateFunction(id) {
 	var date = $("#" + id).data("date");
 	var hasEvent = $("#" + id).data("hasEvent");
 	var dialog = document.querySelector('dialog');
-	alert($('#cclass').val());
 	$.ajax({
 		type:"GET",
 		url:"t_cal_get.php",
