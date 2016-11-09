@@ -1,6 +1,3 @@
-<?php
-
-?>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -59,6 +56,7 @@
 			include "header.php";
 		?>
 		</header>
+		<h2 style="text-align:center">View Progress</h2>
 			<div class="mdl-grid">
 				<div class="mdl-cell mdl-cell--3-col mdl-cell--4-offset"></div>
 			</div>
@@ -88,6 +86,7 @@
 	<script>
 	$(function(){
 		$('#cclass').change(function(){
+			console.log($('#cclass').val());
 			$('#sliders').empty();
 			$.ajax({
 				type:"GET",
@@ -98,6 +97,8 @@
 				},
 				success:function(data){
 					var i=0,j=0;
+					console.log(data);
+					console.log(data.length);
 					for(i=0;i<data.length;i++){
 						var str="Subject:"+data[i].S_Name+" Module:"+data[i].M_Name+" Progress:"+data[i].progress+"%";
 						$('#sliders').append('<div class="mdl-grid"><div class="mdl-cell mdl-cell--5-col mdl-cell--3-offset"><div class="form-control-wrapper">'+str+'<input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="'+data[i].progress+'" step="5" placeholder="" name="slider"></div></div></div>')

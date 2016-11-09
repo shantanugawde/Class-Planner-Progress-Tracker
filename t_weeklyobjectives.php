@@ -49,18 +49,11 @@
 		<link rel="stylesheet" href="cards.css">
 		
 		</head>
-		<style>
-		body{
-		background-image: url(/books.jpg);
-		background-position: center;
-		background-size: cover;
-		}
-	</style>
-
 	<body>
 		<?php
      $header_active=1;
      include 'header.php';?>
+	 <h2 style="text-align:center">Weekly Objectives</h2>
 		<div class ="mdl-grid">
 			<div class="mdl-cell mdl-cell--1-col " >
 			</div>

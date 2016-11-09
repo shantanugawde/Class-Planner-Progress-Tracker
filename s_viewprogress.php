@@ -60,6 +60,7 @@
 			include "sheader.php";
 		?>
 		</header>
+		<h2 style="text-align:center">View Progress</h2>
 			<div class="mdl-grid">
 				<div class="mdl-cell mdl-cell--3-col mdl-cell--4-offset"></div>
 			</div>
@@ -81,7 +82,7 @@
 			$('#sliders').empty();
 			$.ajax({
 				type:"GET",
-				url:"getprogress.php",
+				url:"s_getprogress.php",
 				dataType:"json",
 				data:{
 					class1: $('#cclass').val()

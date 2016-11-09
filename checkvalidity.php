@@ -1,8 +1,7 @@
 <?php
+	session_destroy();
 	session_start();
 	require('db_connect.php');
-	echo $_POST['uname'];
-	echo $_POST['pwd'];
 	$sql = "select type,class_id from login where ID='".$_POST['uname']."' and password='".$_POST['pwd']."'";
 	echo $sql;
 	$result = mysqli_query($conn,$sql);

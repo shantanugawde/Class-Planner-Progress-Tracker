@@ -49,17 +49,11 @@
 				<link rel="stylesheet" href="styles.css">
 						<link rel="stylesheet" href="cards.css">
 	</head>
-	<style>
-		body{
-		background-image: url(/books.jpg);
-		background-position: center;
-		background-size: cover;
-		}
-	</style>
 	<body>
 		<?php
      $header_active=1;
      include 'sheader.php';?>
+	 <h2 style="text-align:center">Calendar</h2>
 	  <dialog class="mdl-dialog" id="dialog" style="width:400px">
     <h6 class="mdl-dialog__title" style="padding:2px,24px,0" id="h6"></h6>
     <div class="mdl-dialog__content" style="height:150px" id="content">
